@@ -12,32 +12,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SONY_ROOT = device/sony/kanuti/rootdir
+LOCAL_PATH = device/sony/kanuti-common
 
 SOMC_PLATFORM := kanuti
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/kanuti/overlay
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/fstab.kanuti:root/fstab.kanuti \
-    $(SONY_ROOT)/system/usr/idc/cyttsp4_mt.idc:system/usr/idc/cyttsp4_mt.idc \
-    $(SONY_ROOT)/system/usr/idc/cyttsp5_mt.idc:system/usr/idc/cyttsp5_mt.idc \
-    $(SONY_ROOT)/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    $(SONY_ROOT)/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(SONY_ROOT)/system/etc/init.kanuti.bt.sh:system/etc/init.kanuti.bt.sh \
-    $(SONY_ROOT)/system/etc/sec_config:system/etc/sec_config \
-    $(SONY_ROOT)/system/etc/gps.conf:system/etc/gps.conf
+    $(LOCAL_PATH)/rootdir/fstab.kanuti:root/fstab.kanuti \
+    $(LOCAL_PATH)/rootdir/system/usr/idc/cyttsp4_mt.idc:system/usr/idc/cyttsp4_mt.idc \
+    $(LOCAL_PATH)/rootdir/system/usr/idc/cyttsp5_mt.idc:system/usr/idc/cyttsp5_mt.idc \
+    $(LOCAL_PATH)/rootdir/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/rootdir/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/rootdir/system/etc/init.kanuti.bt.sh:system/etc/init.kanuti.bt.sh \
+    $(LOCAL_PATH)/rootdir/system/etc/sec_config:system/etc/sec_config \
+    $(LOCAL_PATH)/rootdir/system/etc/gps.conf:system/etc/gps.conf
 
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti.rc \
-    $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti64_32.rc \
-    $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti.rc \
-    $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti64_32.rc \
-    $(SONY_ROOT)/init.kanuti.usb.rc:root/init.kanuti.usb.rc \
-    $(SONY_ROOT)/init.kanuti.pwr.rc:root/init.kanuti.pwr.rc \
-    $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti.rc \
-    $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti64_32.rc
+    $(LOCAL_PATH)/rootdir/init.recovery.kanuti.rc:root/init.recovery.kanuti.rc \
+    $(LOCAL_PATH)/rootdir/init.recovery.kanuti.rc:root/init.recovery.kanuti64_32.rc \
+    $(LOCAL_PATH)/rootdir/init.kanuti.rc:root/init.kanuti.rc \
+    $(LOCAL_PATH)/rootdir/init.kanuti.rc:root/init.kanuti64_32.rc \
+    $(LOCAL_PATH)/rootdir/init.kanuti.usb.rc:root/init.kanuti.usb.rc \
+    $(LOCAL_PATH)/rootdir/init.kanuti.pwr.rc:root/init.kanuti.pwr.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.kanuti.rc:root/ueventd.kanuti.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.kanuti.rc:root/ueventd.kanuti64_32.rc
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -67,30 +67,30 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
 
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
-    $(SONY_ROOT)/system/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(SONY_ROOT)/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
-    $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    $(SONY_ROOT)/system/etc/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
-    $(SONY_ROOT)/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/rootdir/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
+    $(LOCAL_PATH)/rootdir/system/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/rootdir/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/rootdir/system/etc/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/rootdir/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 # NFC
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
+    $(LOCAL_PATH)/rootdir/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/usr/keylayout/ft5x06_ts.kl:system/usr/keylayout/ft5x06_ts.kl \
-    $(SONY_ROOT)/system/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(SONY_ROOT)/system/usr/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
-    $(SONY_ROOT)/system/usr/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
+    $(LOCAL_PATH)/rootdir/system/usr/keylayout/ft5x06_ts.kl:system/usr/keylayout/ft5x06_ts.kl \
+    $(LOCAL_PATH)/rootdir/system/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/rootdir/system/usr/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
+    $(LOCAL_PATH)/rootdir/system/usr/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
 #Audio
 PRODUCT_PACKAGES += \
