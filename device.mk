@@ -196,15 +196,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     extract_elf_ramdisk
 
-# AOSP Packages
-PRODUCT_PACKAGES += \
-    InCallUI \
-    Launcher3 \
-    messaging
-
-PRODUCT_PACKAGES += \
-    libemoji
-
 # BoringSSL hacks
 PRODUCT_PACKAGES += \
     libboringssl-compat
