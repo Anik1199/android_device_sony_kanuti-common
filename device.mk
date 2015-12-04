@@ -192,6 +192,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+# Bootimg tools
+PRODUCT_PACKAGES += \
+    extract_elf_ramdisk
+
 # AOSP Packages
 PRODUCT_PACKAGES += \
     InCallUI \
